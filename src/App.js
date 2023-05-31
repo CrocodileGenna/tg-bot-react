@@ -1,11 +1,24 @@
-import { useEffect } from "react";
 import "./App.css";
+import { sendMessage } from "./index-bot";
+
 const tg = window.Telegram.WebApp;
 function App() {
   return (
     <div className="App">
-      hello
-      <input type="email" autocomplete="on | off" />
+      <form action="/sendEmail" method="post" onSubmit={sendMessage}>
+        <input
+          type="email"
+          name="email"
+          placeholder="Електронна адреса"
+          required
+        />
+        <textarea
+          name="message"
+          placeholder="Текст повідомлення"
+          required
+        ></textarea>
+        <button type="submit">Відправити</button>
+      </form>
     </div>
   );
 }
