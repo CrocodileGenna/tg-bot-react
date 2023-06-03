@@ -1,11 +1,10 @@
 import "./App.css";
-import { sendMessage } from "./index-bot";
 
 const tg = window.Telegram.WebApp;
 function App() {
   return (
     <div className="App">
-      <form action="/sendEmail" method="post" onSubmit={sendMessage}>
+      <form action="/sendEmail" method="post">
         <input
           type="email"
           name="email"
